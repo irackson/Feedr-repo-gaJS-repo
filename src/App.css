@@ -1,0 +1,19 @@
+.App {
+	text-align: left;
+}
+
+.accountManagement {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.hero-container p {
+	text-align: center;
+}
+
+.signOut {
+	position: relative;
+	left: calc(100% - 90px);
+	margin-top: 20px;
+}

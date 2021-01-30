@@ -1,0 +1,7 @@
+.hero {
+	margin-top: 80px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-bewteen;
+	align-items: left;
+}
