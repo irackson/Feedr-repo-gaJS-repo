@@ -3,9 +3,19 @@ function SourceSelector(props) {
 
     return (
         <ul>
-            {sourceList.map((name) => <li><a href="#" onClick={props.update}>{name}</a></li>)}
+            {sourceList.map((name, i) => (
+                <li key={i}>
+                    <button
+                        className="link-to-button"
+                        href="#"
+                        onClick={props.update}
+                    >
+                        {name}
+                    </button>
+                </li>
+            ))}
         </ul>
-    )
+    );
 }
 
-export default SourceSelector; 
+export default SourceSelector;

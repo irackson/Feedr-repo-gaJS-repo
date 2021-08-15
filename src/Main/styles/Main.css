@@ -1,248 +1,262 @@
 /* General styles */
 
 .container {
-	max-width: 1000px;
-	margin: 0 auto;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 #popUp {
-	opacity: 0.95;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: #fff;
+    opacity: 0.95;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
 }
 
 #popUp .closePopUp {
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	font-size: 40px;
-	color: #fe052c;
-	text-decoration: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    color: #fe052c;
+    text-decoration: none;
 }
 
 #popUp.loader {
-	background-image: url(../images/ajax_loader.gif);
-	background-repeat: no-repeat;
-	background-position: center center;
+    background-image: url(../images/ajax_loader.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 #popUp .container {
-	margin-top: 80px;
+    margin-top: 80px;
 }
 
 #popUp h1 {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 #popUp .popUpAction {
-	padding: 10px;
-	background-color: #fe052c;
-	color: #fff;
-	text-decoration: none;
-	border-radius: 5px;
-	transform: 0.2s all;
-	margin-top: 30px;
-	display: inline-block;
+    padding: 10px;
+    background-color: #fe052c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transform: 0.2s all;
+    margin-top: 30px;
+    display: inline-block;
 }
 
 #popUp .popUpAction:hover {
-	color: #fe052c;
-	background: #fff;
+    color: #fe052c;
+    background: #fff;
 }
 
 /* Header styles */
 
 header {
-	background-color: #fe052c;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
+    background-color: #fe052c;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 header h1 {
-	color: #fff;
-	padding: 10px 2%;
-	margin: 0;
-	width: 16%;
-	float: left;
-	padding-left: 0;
+    color: #fff;
+    padding: 10px 2%;
+    margin: 0;
+    width: 16%;
+    float: left;
+    padding-left: 0;
 }
 
 /* Header navigation bar */
 
 header nav {
-	padding: 10px 2%;
-	width: 76%;
-	float: right;
-	text-align: right;
-	line-height: 30px;
-	margin-top: 0;
-	position: relative;
-	vertical-align: middle;
+    padding: 10px 2%;
+    width: 76%;
+    float: right;
+    text-align: right;
+    line-height: 30px;
+    margin-top: 0;
+    position: relative;
+    vertical-align: middle;
 }
 
 /* Search bar */
 
 header #search {
-	width: 20px;
-	height: 20px;
-	position: absolute;
-	right: 20px;
-	top: 10px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
 }
 
-header #search a {
-	display: block;
-	width: 100%;
-	height: 100%;
-	padding: 10px;
-	background-image: url(../images/search_lens.gif);
-	background-repeat: no-repeat;
-	background-position: center center;
+header #search a,
+header #search button {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    background-image: url(../images/search_lens.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
-header #search a:hover {
-	background: #cc0020;
+header #search a:hover,
+header #search button:hover {
+    background: #cc0020;
 }
 
 header #search input {
-	position: absolute;
-	right: 22px;
-	/*top: 10px;*/
-	padding: 8px 0;
-	width: 100px;
-	transition: 0.2s all;
+    position: absolute;
+    right: 22px;
+    /*top: 10px;*/
+    padding: 8px 0;
+    width: 100px;
+    transition: 0.2s all;
 }
 
 header #search.active input {
-	width: 160px;
-	height: 100px;
-	padding: 8px 10px;
-	visibility: visible;
+    width: 160px;
+    height: 100px;
+    padding: 8px 10px;
+    visibility: visible;
 }
 
-header #search.active a {
-	background: #cc0020;
+header #search.active a,
+header #search.active button {
+    background: #cc0020;
 }
 
-header nav a {
-	display: block;
-	padding: 0 10px;
-	color: #fff;
-	font-size: 16px;
-	line-height: 40px;
-	text-decoration: none;
-	transition: 0.2s all;
+header nav a,
+header nav button {
+    display: block;
+    padding: 0 10px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 40px;
+    text-decoration: none;
+    transition: 0.2s all;
 }
 
-header nav a:hover {
-	background-color: #fff;
-	color: #cc0020;
+header nav a:hover,
+header nav button:hover {
+    background-color: #fff;
+    color: #cc0020;
 }
 
 nav ul {
-	padding: 0;
-	margin: 0;
-	margin-right: 30px;
-	list-style: none;
-	position: relative;
+    padding: 0;
+    margin: 0;
+    margin-right: 30px;
+    list-style: none;
+    position: relative;
 }
 
 nav ul li {
-	display: inline-block;
-	background-color: #cc0020;
-	position: relative;
+    display: inline-block;
+    background-color: #cc0020;
+    position: relative;
 }
 
 nav ul ul {
-	display: none;
-	position: absolute;
-	top: 40px;
-	right: -30px;
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: -30px;
 }
 
 /* Display Dropdowns on Hover */
 
 nav ul li:hover > ul {
-	display: inherit;
+    display: inherit;
 }
 
 /* First Tier Dropdown */
 
 nav ul ul li {
-	width: 170px;
-	float: none;
-	display: list-item;
-	position: relative;
+    width: 170px;
+    float: none;
+    display: list-item;
+    position: relative;
 }
 
 /* Main Section */
 
 #main {
-	margin-top: 65px;
+    margin-top: 65px;
 }
 
 #main ul {
-	list-style-type: none;
+    list-style-type: none;
 }
 
 /* Individual Article Styling */
 
 .article {
-	border-bottom: 1px solid #ccc;
-	transition: 0.2s all;
+    border-bottom: 1px solid #ccc;
+    transition: 0.2s all;
 }
 
 .article:hover {
-	padding: 0 2%;
-	background-color: #eee;
+    padding: 0 2%;
+    background-color: #eee;
 }
 
 .article .featuredImage {
-	width: 12%;
-	float: left;
-	margin: 1.5%;
-	max-width: 60px;
+    width: 12%;
+    float: left;
+    margin: 1.5%;
+    max-width: 60px;
 }
 
 .article .featuredImage img {
-	max-width: 100%;
-	border-radius: 50px;
+    max-width: 100%;
+    border-radius: 50px;
 }
 
 .article .articleContent {
-	width: 70%;
-	float: left;
+    width: 70%;
+    float: left;
 }
 
-.article .articleContent a {
-	text-decoration: none;
+.article .articleContent a,
+.article .articleContent button {
+    text-decoration: none;
 }
 
-.article .articleContent a span {
-	display: none;
+.article .articleContent a span,
+.article .articleContent button span {
+    display: none;
 }
 
 .article .articleContent h3 {
-	margin-bottom: 0;
-	color: #fe052c;
+    margin-bottom: 0;
+    color: #fe052c;
 }
 
 .article .articleContent h6 {
-	margin-top: 0;
-	color: #666;
+    margin-top: 0;
+    color: #666;
 }
 
 .article .impressions {
-	width: 15%;
-	float: right;
-	font-size: 30px;
-	margin-top: 15px;
-	text-align: right;
-	color: #097fb2;
+    width: 15%;
+    float: right;
+    font-size: 30px;
+    margin-top: 15px;
+    text-align: right;
+    color: #097fb2;
+}
+
+.link-to-button {
+    background: none !important;
+    border: none;
+    padding: 0 !important;
+    cursor: pointer;
 }

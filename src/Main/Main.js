@@ -36,9 +36,9 @@ async function getKrzana(numDisplay) {
     for (let i = 0; i < result.length; i++) {
         if (
             articles.length < numDisplay &&
-            result[i].thumbnail !== null &&
-            result[i].type === 'Article' &&
-            result[i].origin !== 'The Guardian'
+            result[i]?.thumbnail !== null &&
+            result[i]?.type === 'Article' &&
+            result[i]?.origin !== 'The Guardian'
         ) {
             const url = result[i].source_url;
             const title = result[i].text;
@@ -103,7 +103,7 @@ async function getGuardianCoding(numDisplay) {
             const date = result[i].webPublicationDate;
             const text =
                 'Read the dang article!!! The Guardian does not supply an abstract for a reason...';
-            const thumbnail = result[i].fields.thumbnail;
+            const thumbnail = result[i]?.fields?.thumbnail;
             const article = [url, title, tag, date, text, thumbnail];
             articles.push(article);
         }
@@ -206,7 +206,6 @@ class Main extends React.Component {
 
     popUp = (e) => {
         e.preventDefault();
-        console.log(e);
         this.setState({
             shouldPop: true,
             articleToPop: [
@@ -253,8 +252,8 @@ class Main extends React.Component {
             } else {
                 for (let i = 0; i < article.length; i++) {
                     if (
-                        article[i].toUpperCase().includes(searchTerm) ||
-                        article[i].toLowerCase().includes(searchTerm)
+                        article[i]?.toUpperCase().includes(searchTerm) ||
+                        article[i]?.toLowerCase().includes(searchTerm)
                     ) {
                         return true;
                     }
@@ -268,21 +267,29 @@ class Main extends React.Component {
                 {this.state.loading ? (
                     <div id="popUp" className="loader"></div>
                 ) : (
-                    <body>
+                    <>
                         <header>
                             <section className="container">
-                                <a href="..">
+                                <button
+                                    onClick={() =>
+                                        window.location.reload(false)
+                                    }
+                                    className="link-to-button"
+                                >
                                     <h1>Feedr</h1>
-                                </a>
+                                </button>
                                 <nav>
                                     <ul>
                                         <li>
-                                            <a href="#">
+                                            <button
+                                                href="#"
+                                                className="link-to-button"
+                                            >
                                                 News Source:{' '}
                                                 <span>
                                                     {this.state.currentSource}
                                                 </span>
-                                            </a>
+                                            </button>
                                             <SourceSelector
                                                 sourceList={
                                                     this.state.sourceList
@@ -323,12 +330,12 @@ class Main extends React.Component {
                         <section id="main" className="container">
                             <div>
                                 <ul>
-                                    {currentSourceFeed.map((article) =>
+                                    {currentSourceFeed.map((article, i) =>
                                         isMatch(
                                             article,
                                             this.state.searchTerm
                                         ) ? (
-                                            <li>
+                                            <li key={i}>
                                                 <Article
                                                     article={article}
                                                     articleToPop={
@@ -342,13 +349,13 @@ class Main extends React.Component {
                                                 />
                                             </li>
                                         ) : (
-                                            <span></span>
+                                            <span key={i}></span>
                                         )
                                     )}
                                 </ul>
                             </div>
                         </section>
-                    </body>
+                    </>
                 )}
             </div>
         );
