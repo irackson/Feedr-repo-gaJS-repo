@@ -191,7 +191,7 @@ class Main extends React.Component {
     };
 
     handleInputChange = (e) => {
-        this.setState({ searchTerm: e.target.value });
+        this.setState({ searchTerm: e.target.value.toLowerCase() });
     };
 
     toggleSearchBox = () => {
