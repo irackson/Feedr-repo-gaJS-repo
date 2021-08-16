@@ -27,10 +27,15 @@ async function getFeed(sources, numDisplay) {
 }
 
 async function getKrzana(numDisplay) {
-    const response = await fetch(
-        'https://api.krzana.com/v3/publications?channel_ids[]=32739&limit=100'
-    );
-    const result = await response.json();
+    let result = [];
+    try {
+        const response = await fetch(
+            'https://api.krzana.com/v3/publications?channel_ids[]=32739&limit=10'
+        );
+        result = await response.json();
+    } catch (error) {
+        console.error(error.message);
+    }
 
     let articles = [];
     for (let i = 0; i < result.length; i++) {
@@ -58,10 +63,15 @@ async function getKrzana(numDisplay) {
 }
 
 async function getNYTimes(numDisplay) {
-    const response = await fetch(
-        `https://api.nytimes.com/svc/mostpopular/v2/emailed/1.json?api-key=${process.env.REACT_APP_NYT_KEY}`
-    );
-    const result = await response.json();
+    let result = [];
+    try {
+        const response = await fetch(
+            `https://api.nytimes.com/svc/mostpopular/v2/emailed/1.json?api-key=${process.env.REACT_APP_NYT_KEY}`
+        );
+        result = await response.json();
+    } catch (error) {
+        console.error(error.message);
+    }
 
     let articles = [];
     for (let i = 0; i < result.results.length; i++) {
@@ -88,13 +98,18 @@ async function getNYTimes(numDisplay) {
 }
 
 async function getGuardianCoding(numDisplay) {
-    const response = await fetch(
-        `https://content.guardianapis.com/search?show-fields=thumbnail&page-size=100&q=artificial%20intelligence%20computer%20programming%20software%20development&api-key=${process.env.REACT_APP_GUARDIAN_KEY}`
-    );
-    const result_temp = await response.json();
-    const result = result_temp.response.results;
-    let articles = [];
+    let result = [];
+    try {
+        const response = await fetch(
+            `https://content.guardianapis.com/search?show-fields=thumbnail&page-size=10&q=artificial%20intelligence%20computer%20programming%20software%20development&api-key=${process.env.REACT_APP_GUARDIAN_KEY}`
+        );
+        const result_temp = await response.json();
+        result = result_temp.response.results;
+    } catch (error) {
+        console.error(error.message);
+    }
 
+    let articles = [];
     for (let i = 0; i < result.length; i++) {
         if (articles.length < numDisplay) {
             const url = result[i].webUrl;
@@ -116,12 +131,17 @@ async function getGuardianCoding(numDisplay) {
 }
 
 async function getSpaceFlightNews(numDisplay) {
-    const response = await fetch(
-        'https://spaceflightnewsapi.net/api/v2/articles?_limit=100'
-    );
-    const result = await response.json();
-    let articles = [];
+    let result = [];
+    try {
+        const response = await fetch(
+            'https://spaceflightnewsapi.net/api/v2/articles?_limit=10'
+        );
+        result = await response.json();
+    } catch (error) {
+        console.error(error.message);
+    }
 
+    let articles = [];
     for (let i = 0; i < result.length; i++) {
         if (articles.length < numDisplay) {
             const url = result[i].url;
