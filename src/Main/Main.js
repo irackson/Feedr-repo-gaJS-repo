@@ -30,7 +30,7 @@ async function getKrzana(numDisplay) {
     let result = [];
     try {
         const response = await fetch(
-            'https://api.krzana.com/v3/publications?channel_ids[]=32739&limit=10'
+            'https://api.krzana.com/v3/publications?channel_ids[]=32739&limit=40'
         );
         result = await response.json();
     } catch (error) {
@@ -101,7 +101,7 @@ async function getGuardianCoding(numDisplay) {
     let result = [];
     try {
         const response = await fetch(
-            `https://content.guardianapis.com/search?show-fields=thumbnail&page-size=10&q=artificial%20intelligence%20computer%20programming%20software%20development&api-key=${process.env.REACT_APP_GUARDIAN_KEY}`
+            `https://content.guardianapis.com/search?show-fields=thumbnail&page-size=40&q=artificial%20intelligence%20computer%20programming%20software%20development&api-key=${process.env.REACT_APP_GUARDIAN_KEY}`
         );
         const result_temp = await response.json();
         result = result_temp.response.results;
@@ -134,7 +134,7 @@ async function getSpaceFlightNews(numDisplay) {
     let result = [];
     try {
         const response = await fetch(
-            'https://spaceflightnewsapi.net/api/v2/articles?_limit=10'
+            'https://spaceflightnewsapi.net/api/v2/articles?_limit=40'
         );
         result = await response.json();
     } catch (error) {
