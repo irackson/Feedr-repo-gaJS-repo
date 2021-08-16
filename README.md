@@ -12,7 +12,7 @@
 
 <!-- _Live URLs_ -->
 
--   [live netlify link](frosty-morse-bebe1b.netlify.app)
+-   [live netlify link](https://frosty-morse-bebe1b.netlify.app/)
 -   [live at my subdomain -- (nicer URL)](https://feedr.ianrackson.com/)
 
 <!-- _GitHub URL_ -->

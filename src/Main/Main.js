@@ -11,7 +11,7 @@ async function getFeed(sources, numDisplay) {
 
     for (let i = 0; i < sources.length; i++) {
         if (sources[i] === 'Krzana Covid') {
-            await articleArray.push(await getKrzana(numDisplay));
+            // await articleArray.push(await getKrzana(numDisplay));
         } else if (sources[i] === 'NYTimes Popular') {
             await articleArray.push(await getNYTimes(numDisplay));
         } else if (sources[i] === 'Guardian Coding') {
@@ -290,14 +290,9 @@ class Main extends React.Component {
                     <>
                         <header>
                             <section className="container">
-                                <button
-                                    onClick={() =>
-                                        window.location.reload(false)
-                                    }
-                                    className="link-to-button"
-                                >
+                                <a href="..">
                                     <h1>Feedr</h1>
-                                </button>
+                                </a>
                                 <nav>
                                     <ul>
                                         <li>
