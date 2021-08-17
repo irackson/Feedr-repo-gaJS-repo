@@ -146,8 +146,8 @@ header nav button {
 
 header nav a:hover,
 header nav button:hover {
-    background-color: #fff;
-    color: #cc0020;
+    background-color: #cc0020;
+    color: #fff;
 }
 
 nav ul {
